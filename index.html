@@ -3,407 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PowerUP-TeamProject</title>
+    <title>PowerUP-TeamProject | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <script src="js/core/theme.js"></script>
 </head>
 
-<body>
-    <!-- <header class="d-flex flex-wrap align-items-center justify-content-between gap-3 px-4 py-3 bg-body border-bottom"> -->
-    <header class="d-flex align-items-center justify-content-between gap-3 px-4 py-3 bg-body border-bottom position-fixed top-0 start-0 w-100 site-navbar">
-        <button type="button" class="theme-toggle d-flex align-items-center" id="themeToggle" role="switch" aria-checked="false" aria-label="โหมดมืด" title="เปิดโหมดมืด">
-            <span class="theme-toggle-thumb" aria-hidden="true"></span>
-        </button>
-        <h1 class="h3 fw-bold mb-0 text-body-emphasis">PORTFOLIO</h1>
-        
-        <button
-            type="button"
-            id="topNav"
-            class="btn btn-primary shadow flex-shrink-0"
-            style="z-index: 1040; width: 48px; height: 48px;"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#pageMenu"
-            aria-controls="pageMenu"
-            aria-label="เปิดเมนู">
-            <span class="fs-4">☰</span>
-        </button>
-    </header>
+<body class="home">
 
-    
-    <!-- Side Navigation -->
-    <div
-        class="offcanvas offcanvas-end text-bg-body"
-        tabindex="-1"
-        id="pageMenu"
-        aria-labelledby="pageMenuLabel"
-        data-bs-theme="auto">
-
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title fw-bold" id="pageMenuLabel">
-                MENU
-            </h5>
-
-            <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="ปิด">
-            </button>
-        </div>
-
-        <div class="offcanvas-body">
-            <nav class="d-grid gap-3">
-
-                <button type="button"
-                    class="btn btn-outline-primary text-start fw-bold"
-                    data-page="homePage"
-                    data-bs-dismiss="offcanvas">
-                    🏠 HOME
-                </button>
-
-                <button type="button"
-                    class="btn btn-outline-primary text-start fw-bold"
-                    data-page="createPage"
-                    data-bs-dismiss="offcanvas">
-                    ✍️ สร้าง Portfolio
-                </button>
-
-                <button type="button"
-                    class="btn btn-outline-primary text-start fw-bold"
-                    data-page="portfolioPage"
-                    data-bs-dismiss="offcanvas">
-                    📁 PORTFOLIO
-                </button>
-
-                <a href="Game/game.html"
-                    class="btn btn-primary text-start fw-bold">
-                    🎮 เล่น Blackjack
-                </a>
-
-            </nav>
-        </div>
-    </div>
-    <!-- End Side Navigation -->
-
-
-    <div class="container-fluid p-3 p-md-4">
-    <!-- HOME PAGE -->
-        <main id="homePage" class="container py-4 py-md-5">
-
-            <!-- Hero Section -->
-            <section class="home-hero bg-primary-subtle text-primary-emphasis rounded-4 p-4 p-md-5 text-center shadow-sm mb-5">
-
-                <span class="badge text-bg-primary rounded-pill px-3 py-2 mb-4">
-                    PERSONAL LEARNING PORTFOLIO
-                </span>
-
-                <h1 class="display-4 fw-bold mb-3">
-                    Discover Your Journey.
-                    <br>
-                    <span class="text-primary">Showcase Your Growth.</span>
-                </h1>
-
-                <p class="fs-5 text-body-secondary mx-auto mb-4 home-description">
-                    บันทึกประสบการณ์การเรียนรู้ รวบรวมผลงาน
-                    และแสดงทักษะที่คุณได้พัฒนา
-                    ในรูปแบบ Portfolio ของคุณเอง
-                </p>
-
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <button type="button"
-                        class="btn btn-primary btn-lg px-4"
-                        data-page="createPage">
-                        Get Started
-                    </button>
-
-                    <button type="button"
-                        class="btn btn-outline-primary btn-lg px-4"
-                        data-page="portfolioPage">
-                        View Portfolio
-                    </button>
-                </div>
-            </section>
-
-            <!-- Features Section -->
-            <section class="py-3">
-
-                <div class="text-center mb-4">
-                    <h2 class="fw-bold">What You Can Do</h2>
-                    <p class="text-body-secondary">
-                        ทุกประสบการณ์คือส่วนหนึ่งของการเติบโต
-                    </p>
-                </div>
-
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-
-                    <!-- Feature 1 -->
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
-                            <div class="card-body p-4">
-                                <div class="display-4 mb-3">✍️</div>
-                                <h5 class="card-title fw-bold">Create Portfolio</h5>
-                                <p class="card-text text-body-secondary">
-                                    สร้าง Portfolio และบันทึกข้อมูลของคุณ
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
-                            <div class="card-body p-4">
-                                <div class="display-4 mb-3">🚀</div>
-                                <h5 class="card-title fw-bold">Show Your Works</h5>
-                                <p class="card-text text-body-secondary">
-                                    รวบรวมผลงาน กิจกรรม และประสบการณ์
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
-                            <div class="card-body p-4">
-                                <div class="display-4 mb-3">📈</div>
-                                <h5 class="card-title fw-bold">Track Your Growth</h5>
-                                <p class="card-text text-body-secondary">
-                                    ทบทวนสิ่งที่ได้เรียนรู้และพัฒนาตนเอง
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-        <!-- END HOME PAGE -->
-
-        <div class="row g-4 align-items-stretch">
-
-            <!-- หน้า: สร้าง Portfolio -->
-            <aside class="col-lg-4 create-panel d-flex flex-column" id="createPage" hidden>
-                <div class="card bg-body-tertiary rounded-4 p-4">
-                    <h2 class="h5 fw-bold text-body-emphasis mb-3">Create Portfolio</h2>
-                    <!-- <p class="d-flex align-items-center gap-2 small fw-medium text-body-emphasis mb-3">
-                        PORTFOLIO ที่บันทึกแล้ว
-                        <span class="badge bg-dark" id="countBadge">0</span>
-                        รายการ
-                    </p>
-                    <ul class="portfolio-list list-unstyled mb-4" id="createPortfolioList" aria-label="รายการ Portfolio ที่บันทึกแล้ว"></ul> -->
-
-                    <form id="portfolioForm" novalidate>
-                        <div class="field mb-3">
-                            <label for="displayName" class="form-label">Name <span class="text-primary">*</span></label>
-                            <div class="control">
-                                <input type="text" id="displayName" class="form-control" placeholder="ระบุชื่อจริงหรือนามแฝง" required>
-                            </div>
-                            <div class="error-msg invalid-feedback">โปรดระบุชื่อที่ต้องการแสดง</div>
-                        </div>
-
-                        <div class="field mb-3">
-                            <label for="enjoy" class="form-label">What I Enjoy <span class="text-primary">*</span></label>
-                            <div class="control">
-                                <textarea id="enjoy" class="form-control" rows="2" required placeholder="ระบุสิ่งที่คุณชื่นชอบ"></textarea>
-                            </div>
-                            <div class="error-msg invalid-feedback">โปรดระบุสิ่งที่คุณชอบทำ</div>
-                        </div>
-
-                        <div class="field mb-3">
-                            <label for="tried" class="form-label">What I've Tried <span class="text-primary">*</span></label>
-                            <div class="control">
-                                <textarea id="tried" class="form-control" rows="2" required placeholder="ระบุสิ่งที่คุณเคยลองทำ"></textarea>
-                            </div>
-                            <div class="error-msg invalid-feedback">โปรดระบุสิ่งที่คุณเคยลองทำ</div>
-                        </div>
-
-                        <div class="field mb-3">
-                            <label for="curious" class="form-label">What I'm Curious About <span class="text-primary">*</span></label>
-                            <div class="control">
-                                <textarea id="curious" class="form-control" rows="2" required placeholder="ระบุสิ่งที่คุณสนใจหรืออยากรู้เพิ่ม"></textarea>
-                            </div>
-                            <div class="error-msg invalid-feedback">โปรดระบุสิ่งที่คุณสนใจหรืออยากรู้เพิ่ม</div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 mt-2 py-2">บันทึก Portfolio</button>
-                    </form>
-                </div>
-                <!-- กล่อง: Import Portfolio -->
-                <div class="card bg-body-tertiary rounded-4 p-4 mt-4 flex-grow-1">
-                    <h2 class="h5 fw-bold text-body-emphasis mb-3">Import Portfolio</h2>
-                    <div class="mb-3">
-                        <label for="importFile" class="form-label">เลือกไฟล์ .json (Upload File):</label>
-                        <input type="file" id="importFile" class="form-control" accept=".json,application/json">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="importJson" class="form-label">หรือวางข้อความ JSON (Paste JSON):</label>
-                        <textarea id="importJson" class="form-control" rows="5" placeholder="วาง Portfolio JSON ที่นี่"></textarea>
-                    </div>
-
-                    <p class="text-danger small mb-3" id="importError" hidden></p>
-
-                    <button type="button" class="btn btn-primary w-100 py-2 mt-auto" id="validateImportBtn">ตรวจสอบ JSON</button>
-                </div>
-            </aside>
-
-            <div class="col-lg-8 create-content" hidden>
-                <section class="card bg-body-tertiary rounded-4 p-4 h-100">
-                    <h2 class="h4 mb-4">Create Portfolio Item</h2>
-
-                    <form id="item-form" novalidate>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                                <input type="text" id="title" name="title" class="form-control" required placeholder="ระบุชื่อผลงาน">
-                                <div class="invalid-feedback">โปรดระบุชื่อผลงาน</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
-                                <select id="type" name="type" class="form-select" required>
-                                    <option value="">เลือกประเภท</option>
-                                    <option value="Course Assignment">Course Assignment</option>
-                                    <option value="Personal Project">Personal Project</option>
-                                    <option value="Activity">Activity</option>
-                                    <option value="Workshop">Workshop</option>
-                                    <option value="Volunteer">Volunteer</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                <div class="invalid-feedback">โปรดเลือกประเภท</div>
-                            </div>
-
-                            <div class="col-12" id="otherTypeField" hidden>
-                                <label for="otherType" class="form-label">ระบุประเภทอื่น ๆ <span class="text-danger">*</span></label>
-                                <input type="text" id="otherType" name="otherType" class="form-control" placeholder="พิมพ์รายละเอียดประเภทผลงาน">
-                                <div class="invalid-feedback">โปรดระบุประเภทผลงาน</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
-                                <input type="date" id="date" name="date" class="form-control" required>
-                                <div class="invalid-feedback">โปรดเลือกวันที่ (ต้องไม่เป็นวันในอนาคต)</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
-                                <input type="text" id="role" name="role" class="form-control" required placeholder="ระบุหน้าที่">
-                                <div class="invalid-feedback">โปรดระบุหน้าที่</div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="skills" class="form-label">Skills <span class="text-danger">*</span></label>
-                                <input type="text" id="skills" name="skills" class="form-control" placeholder="ระบุทักษะที่ใช้" required>
-                                <div class="invalid-feedback">โปรดระบุทักษะที่ใช้</div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
-                                <textarea id="description" name="description" class="form-control" rows="4" required placeholder="ระบุรายละเอียดงาน"></textarea>
-                                <div class="invalid-feedback">โปรดระบุรายละเอียดงาน</div>
-                            </div>
-                        </div>
-
-                        <h3 class="h5 mt-4 mb-3">Reflection</h3>
-
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="whatIDid" class="form-label">What I did <span class="text-danger">*</span></label>
-                                <textarea id="whatIDid" name="whatIDid" class="form-control" rows="4" required placeholder="ระบุสิ่งที่ทำ"></textarea>
-                                <div class="invalid-feedback">โปรดระบุสิ่งที่ทำ</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="whatILearned" class="form-label">What I learned <span class="text-danger">*</span></label>
-                                <textarea id="whatILearned" name="whatILearned" class="form-control" rows="4" required placeholder="ระบุสิ่งที่เรียนรู้"></textarea>
-                                <div class="invalid-feedback">โปรดระบุสิ่งที่เรียนรู้</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="challenge" class="form-label">Challenge <span class="text-danger">*</span></label>
-                                <textarea id="challenge" name="challenge" class="form-control" rows="4" required placeholder="ระบุความท้าทาย"></textarea>
-                                <div class="invalid-feedback">โปรดระบุความท้าทาย</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="nextStep" class="form-label">Next step <span class="text-danger">*</span></label>
-                                <textarea id="nextStep" name="nextStep" class="form-control" rows="4" required placeholder="ระบุสิ่งที่ต้องการทำต่อในอนาคต"></textarea>
-                                <div class="invalid-feedback">โปรดระบุสิ่งที่ต้องการทำต่อ</div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="evidence" class="form-label mb-0">Evidence <span class="text-danger">*</span></label>
-                                <div class="form-text mt-0 mb-2">ลิงก์ต้องขึ้นต้นด้วย http:// หรือ https://</div>
-                                <textarea id="evidence" name="evidence" class="form-control" rows="4" placeholder="ระบุลิงก์หลักฐาน" required></textarea>
-                                <div class="invalid-feedback">ต้องมีอย่างน้อย 1 ลิงก์ และทุกบรรทัดต้องขึ้นต้นด้วย http:// หรือ https://</div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary px-4">บันทึก Portfolio Item</button>
-                            <button type="reset" class="btn btn-link reset-button">ล้างฟอร์ม</button>
-                        </div>
-                    </form>
-                </section>
-            </div>
-
-            <!-- หน้า: ดู Portfolio -->
-            <aside class="col-lg-4 portfolio-panel" id="portfolioPage" hidden>
-                <div class="card bg-body-tertiary rounded-4 p-4">
-                    <h2 class="h5 fw-bold text-body-emphasis d-flex align-items-center gap-2 mb-3">
-                        PORTFOLIO ที่บันทึกแล้ว
-                        <span class="badge bg-dark" id="portfolioCountBadge">0</span>
-                        รายการ
-                    </h2>
-                    <ul class="portfolio-list list-unstyled mb-0" id="portfolioList"></ul>
-                </div>
-            </aside>
-
-            <div class="col-lg-8 portfolio-content" hidden>
-                <main class="card bg-body rounded-4 p-4 mb-4" aria-live="polite">
-                    <p class="text-body-secondary py-4 mb-0" id="emptyState" hidden>ยังไม่มี Portfolio</p>
-
-                    <div id="detailContent" hidden>
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-3">
-                            <h1 class="fs-2 fw-normal text-break mb-0" id="detailTitle"></h1>
-                            <button type="button" class="btn btn-sm btn-outline-danger flex-shrink-0" id="deleteBtn">ลบ Portfolio</button>
-                        </div>
-
-                        <section class="mt-3">
-                            <h3 class="small fw-bold text-uppercase text-body-emphasis mb-0">What I Enjoy</h3>
-                            <p class="text-break mb-0" id="detailEnjoy"></p>
-                        </section>
-
-                        <section class="mt-3">
-                            <h3 class="small fw-bold text-uppercase text-body-emphasis mb-0">What I've Tried</h3>
-                            <p class="text-break mb-0" id="detailTried"></p>
-                        </section>
-
-                        <section class="mt-3">
-                            <h3 class="small fw-bold text-uppercase text-body-emphasis mb-0">What I'm Curious About</h3>
-                            <p class="text-break mb-0" id="detailCurious"></p>
-                        </section>
-                    </div>
-                </main>
-
-                <section class="card bg-body rounded-3 p-4">
-                    <h2 class="h4 text-body-emphasis mb-4">
-                        PORTFOLIO ITEMS
-                        <span class="badge bg-dark" id="itemCount">0</span>
-                    </h2>
-                    <div class="items-container" id="itemsContainer"></div>
-                </section>
-            </div>
-        </div>
+    <!-- พื้นหลังเคลื่อนไหว -->
+    <div class="home-bg" aria-hidden="true">
+        <span class="blob blob-1" data-depth="60"></span>
+        <span class="blob blob-2" data-depth="-45"></span>
+        <span class="blob blob-3" data-depth="35"></span>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <main class="home-hero">
+        <span class="home-badge" data-reveal>PERSONAL LEARNING PORTFOLIO</span>
+
+        <h1 class="home-title" data-reveal>
+            Showcase<br>
+            <span class="gradient-text">Your Growth.</span>
+        </h1>
+
+        <p class="home-subtitle" data-reveal>
+            พื้นที่บันทึก<span class="typed-word" id="typedWord">ผลงาน</span><span class="typed-caret" aria-hidden="true"></span>
+            <br>ของคุณไว้ในที่เดียว
+        </p>
+
+        <div class="home-actions" data-reveal>
+            <a href="pages/create.html" class="btn btn-primary btn-lg home-btn">
+                เริ่มสร้าง Portfolio <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="pages/portfolio.html" class="btn btn-outline-primary btn-lg home-btn">
+                ดู Portfolio
+            </a>
+        </div>
+    </main>
+
+    <script src="js/core/ui.js"></script>
+    <script src="js/pages/home.js"></script>
 </body>
 </html>
