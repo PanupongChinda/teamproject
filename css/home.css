@@ -1,0 +1,213 @@
+/* =========================================================
+   home.css — หน้าแรก (index.html)
+   หน้าเรียบ ๆ มีแค่หัวข้อ + 2 ปุ่ม และพื้นหลังเคลื่อนไหวเบา ๆ
+   ========================================================= */
+
+.home {
+  overflow-x: hidden;
+}
+
+/* ---------- พื้นหลัง ---------- */
+.home-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ลายจุดจาง ๆ */
+.home-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--bs-border-color) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+  opacity: 0.7;
+}
+
+/* วงกลมสีเบลอ ๆ (home.js ขยับตามเมาส์) */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  translate: var(--px, 0) var(--py, 0);
+  transition: translate 0.8s var(--ease);
+  animation: float 14s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  width: 42vmax;
+  height: 42vmax;
+  top: -14vmax;
+  left: -10vmax;
+  background: #9fbaf0;
+}
+
+.blob-2 {
+  width: 34vmax;
+  height: 34vmax;
+  right: -10vmax;
+  bottom: -12vmax;
+  background: #f3c9a8;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  width: 22vmax;
+  height: 22vmax;
+  top: 55%;
+  left: 12%;
+  background: #b9e3d6;
+  animation-delay: -9s;
+}
+
+[data-bs-theme="dark"] .blob { opacity: 0.25; }
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3vmax, -2vmax) scale(1.06); }
+  100% { transform: translate(-2vmax, 2vmax) scale(0.96); }
+}
+
+/* ---------- เนื้อหา ---------- */
+.home-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-text);
+  background: rgba(var(--bs-body-bg-rgb), 0.7);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.home-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #1f9d55;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(31, 157, 85, 0); }
+}
+
+.home-title {
+  margin: 0;
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--bs-emphasis-color);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-text), #6b8fd6, #d98b5f, var(--accent-text));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 300% 0; }
+}
+
+.home-subtitle {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--bs-secondary-color);
+}
+
+/* คำที่พิมพ์อัตโนมัติ */
+.typed-word {
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
+.typed-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--accent-text);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ---------- ปุ่ม ---------- */
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.home-btn {
+  min-width: 220px;
+  padding: 0.9rem 1.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.home-btn.btn-primary {
+  box-shadow: 0 10px 25px rgba(42, 77, 136, 0.3);
+}
+
+.home-btn.btn-primary:hover {
+  box-shadow: 0 14px 30px rgba(42, 77, 136, 0.4);
+}
+
+.home-btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+
+.home-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* มือถือ: ปุ่มเต็มความกว้าง เรียงแนวตั้ง */
+@media (max-width: 575.98px) {
+  .home-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .home-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
