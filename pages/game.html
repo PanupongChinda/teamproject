@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>แบล็กแจ็ก: ภารกิจดาวไกล</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+<button id="snd" aria-label="เปิดหรือปิดเสียง">🔊 เสียง: เปิด</button>
+
+<section class="screen on" id="start">
+  <h1>BLACKJACK 21</h1>
+  <h2>ภารกิจดาวไกล</h2>
+  <p>ท้าดวลกับบอทดีลเลอร์ประจำสถานีอวกาศ<br>ทำแต้มให้ใกล้ 21 ที่สุดโดยไม่เกิน ชนะเพื่อรับไฟล์ข้อมูลสรุปผลงาน (JSON)</p>
+  <div class="panel" style="max-width:480px;text-align:left">
+    <p>• จั่วไพ่เพื่อเพิ่มแต้ม หรือหยุดเมื่อพอใจ<br>• J, Q, K มีค่า 10 แต้ม และ A มีค่า 1 หรือ 11<br>• บอทจะจั่วไพ่ต่อจนกว่าจะได้อย่างน้อย 17 แต้ม<br>• แต้มเกิน 21 ถือว่าแพ้ทันที</p>
+  </div>
+  <div class="row"><button class="btn" id="startBtn">เริ่มภารกิจ</button><a class="btn alt" href="portfolio.html" id="toPortfolioStart">กลับไปหน้า Portfolio</a></div>
+</section>
+
+<section class="screen" id="game">
+  <h2>BLACKJACK</h2><div class="card back" id="deck" aria-hidden="true">?</div>
+  <div class="panel zone"><h3>บอทดีลเลอร์ <span class="score" id="ds">0</span></h3><div class="hand" id="dh"></div></div>
+  <div id="status"></div>
+  <div class="panel zone"><h3>ผู้เล่น <span class="score" id="ps">0</span></h3><div class="hand" id="ph"></div></div>
+  <div class="row"><button class="btn go" id="hit">จั่วไพ่</button><button class="btn alt" id="stand">หยุด</button></div>
+</section>
+
+<section class="screen lose" id="lose">
+  <h2>ภารกิจล้มเหลว</h2>
+  <p id="loseMsg"></p>
+  <div class="row"><button class="btn go" id="again1">เล่นอีกรอบ</button><button class="btn alt" id="quit">ออก</button><a class="btn alt" href="portfolio.html" id="toPortfolioLose">กลับไปหน้า Portfolio</a></div>
+</section>
+
+<section class="screen" id="draw">
+  <h2>เสมอกัน</h2>
+  <p>แต้มเท่ากับบอท ยังไม่มีผู้ชนะ ลองอีกครั้ง</p>
+  <div class="row"><button class="btn go" id="again2">เล่นรอบใหม่</button><a class="btn alt" href="portfolio.html" id="toPortfolioDraw">กลับไปหน้า Portfolio</a></div>
+</section>
+
+<section class="screen" id="bye">
+  <h2>ขอบคุณที่ร่วมภารกิจ</h2>
+  <p>แล้วพบกันใหม่ นักบินอวกาศ</p>
+  <button class="btn" id="home">กลับหน้าแรก</button>
+</section>
+
+<section class="screen win" id="win">
+  <h2>ภารกิจสำเร็จ! คุณชนะ</h2>
+  <p id="winMsg"></p>
+  <p>กรอกชื่อ-นามสกุลของคุณเพื่อบันทึกข้อมูลลงในไฟล์ Portfolio JSON</p>
+  <div class="fields">
+    <div><label for="fullName">ชื่อ-นามสกุล</label><input id="fullName" maxlength="80" autocomplete="name" placeholder="เช่น สมชาย มีสุข"></div>
+    <div id="err" role="alert"></div>
+    <button class="btn" id="mk">สร้างและดาวน์โหลดไฟล์ .json</button>
+  </div>
+</section>
+
+<section class="screen" id="result">
+  <h2>บันทึกข้อมูลสำเร็จ</h2>
+  <p id="dlMsg">ไฟล์ Portfolio JSON ของคุณพร้อมดาวน์โหลดแล้ว</p>
+  <div class="row">
+    <button class="btn go" id="dl">ดาวน์โหลดไฟล์ .json</button>
+    <button class="btn alt" id="again3">เล่นอีกรอบ</button>
+    <a class="btn alt" href="portfolio.html" id="toPortfolioCert">กลับไปหน้า Portfolio</a>
+  </div>
+</section>
+
+<script src="../js/pages/game.js"></script>
+</body>
+</html>
